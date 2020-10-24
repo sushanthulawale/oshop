@@ -1,0 +1,47 @@
+<body>
+    <p>
+        <a routerLink="/admin/products/new" class="btn btn-primary">New Product</a></p>
+    <!-- <p>
+        <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search...">
+    </p> -->
+
+   <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover; table-striped table-bordered table-hover table-condensed">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <!-- <th>key</th> -->
+            <th></th>                
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of filteredProducts">
+            <td>{{p.title}}</td>
+            <td>${{p.price}}</td>
+            <!-- <td>{{p.$key}}</td> -->
+            <td><a [routerLink]="['/admin/products/', p.$key]">Edit</a></td>
+        </tr>
+    </tbody>
+   </table>
+
+    <!-- <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th> -->
+                <!-- <th>key</th> -->
+                <!-- <th></th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of filteredProducts">
+                <td>{{p.title}}</td>
+                <td>${{p.price}}</td> -->
+                <!-- <td>{{p.$key}}</td> -->
+                <!-- <td><a [routerLink]="['/admin/products/', p.$key]">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>    -->
+</body>
+
+

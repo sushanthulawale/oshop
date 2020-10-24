@@ -1,0 +1,10 @@
+.card{
+    margin-bottom: 30px;;
+    width: 15rem;
+    height: 22rem;
+}
+
+.card-footer{
+    padding: 0;    
+}
+

@@ -1,0 +1,20 @@
+ <body class="col-sm"> 
+     <!-- <a style="font-size: xx-large; color: green;" routerLink="/">Organic Shop</a><br> -->
+ <div class="row"> 
+    <div class="col-3">
+    <product-filter [category]="category"></product-filter>
+    </div>
+    <div class="col">
+        <div class="row" *ngIf="cart$ | async as cart">
+            <ng-container 
+            *ngFor="let p of filteredProducts index as i;">
+                <div class="col">
+                  <product-card [product]="p" [shopping-cart]="cart"></product-card>
+                </div>
+                <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div> <br>
+            </ng-container>
+        </div>
+    </div>
+</div>     
+</body>
+
